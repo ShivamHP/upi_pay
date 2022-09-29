@@ -77,7 +77,12 @@ class UpiPayPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, PluginRegis
       if(tn != null) {
         uriStr += ("&tn=" + Uri.encode(tn))
       }
-      uriStr += "&mode=04" // &orgid=000000"
+      uriStr += ("&mode=" + Uri.encode("04")) // &orgid=000000"
+
+      uriStr += ("&sign=" Uri.encode(Base64.encodeToString(signatureBytes, Base64.DEFAULT)))
+
+      uriStr += ("&orgid=" + Uri.encode("000000"))
+
       val uri = Uri.parse(uriStr)
       // Log.d("upi_pay", "initiateTransaction URI: " + uri.toString())
 
