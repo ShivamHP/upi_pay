@@ -94,7 +94,7 @@ class UpiPay {
   /// for now. Setting it to any other value will lead to [UnsupportedError].
   static Future<List<ApplicationMeta>> getInstalledUpiApplications({
     UpiApplicationDiscoveryAppPaymentType paymentType:
-        UpiApplicationDiscoveryAppPaymentType.nonMerchant,
+        UpiApplicationDiscoveryAppPaymentType.both,
     UpiApplicationDiscoveryAppStatusType statusType:
         UpiApplicationDiscoveryAppStatusType.working,
   }) async {
